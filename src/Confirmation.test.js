@@ -9,4 +9,10 @@ describe('Confirmation component', () => {
 
     expect(getByRole('dialog')).toBeInTheDocument();
   })
+
+  it("should have a title saying 'Confirmation'", () => {
+    const {getByText} = render(<Confirmation />);
+
+    expect(getByText('Confirmation')).toBeInTheDocument();
+  })
 })
