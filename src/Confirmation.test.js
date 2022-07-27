@@ -15,4 +15,11 @@ describe('Confirmation component', () => {
 
     expect(getByText('Confirmation')).toBeInTheDocument();
   })
+
+  it("should have a dynamic confirmation question", () => {
+    const question = 'Do you confirm?';
+    const {getByText} = render(<Confirmation>{question}</Confirmation>);
+
+    expect(getByText(question)).toBeInTheDocument();
+  })
 })
