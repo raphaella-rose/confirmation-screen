@@ -28,4 +28,10 @@ describe('Confirmation component', () => {
 
     expect(getByRole('button', {name: 'OK'})).toBeInTheDocument();
   });
+
+  it('should have an "Cancel" button', () => {
+    const {getByRole} = render(<Confirmation />);
+
+    expect(getByRole('button', {name: 'Cancel'})).toBeInTheDocument();
+  })
 })

@@ -5,6 +5,7 @@ const Confirmation = ({children}) => {
     <h1>Confirmation</h1>
     <div>{children}</div>
     <button>OK</button>
+    <button>Cancel</button>
   </div>;
 };
 
