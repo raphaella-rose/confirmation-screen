@@ -34,4 +34,14 @@ describe('Confirmation component', () => {
 
     expect(getByRole('button', {name: 'Cancel'})).toBeInTheDocument();
   })
+
+  it('should be able to receive a handler for the "OK" button and execute it upon click', () => {
+    const onCancellationHandler = jest.fn();
+    const {getByRole} = render(<Confirmation onCancellation={onCancellationHandler} />);
+    const okButton = getByRole('button', {name: 'Cancel'});
+
+    fireEvent.click(okButton);
+
+    expect(onConfirmationHandler).toHaveBeenCalled();
+  })
 })
