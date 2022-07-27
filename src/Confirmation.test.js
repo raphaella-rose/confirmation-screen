@@ -22,4 +22,10 @@ describe('Confirmation component', () => {
 
     expect(getByText(question)).toBeInTheDocument();
   })
+
+  it('should have an "OK" button', () => {
+    const {getByRole} = render(<Confirmation />);
+
+    expect(getByRole('button', {name: 'OK'})).toBeInTheDocument();
+  });
 })
