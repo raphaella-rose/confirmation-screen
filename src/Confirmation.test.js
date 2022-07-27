@@ -1,6 +1,6 @@
 /* eslint-disable testing-library/prefer-screen-queries */
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import Confirmation from './Confirmation';
 
 describe('Confirmation component', () => {
@@ -36,9 +36,9 @@ describe('Confirmation component', () => {
   })
 
   it('should be able to receive a handler for the "OK" button and execute it upon click', () => {
-    const onCancellationHandler = jest.fn();
-    const {getByRole} = render(<Confirmation onCancellation={onCancellationHandler} />);
-    const okButton = getByRole('button', {name: 'Cancel'});
+    const onConfirmationHandler = jest.fn();
+    const {getByRole} = render(<Confirmation onConfirmation={onConfirmationHandler} />);
+    const okButton = getByRole('button', {name: 'OK'});
 
     fireEvent.click(okButton);
 
