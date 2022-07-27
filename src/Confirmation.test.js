@@ -44,4 +44,14 @@ describe('Confirmation component', () => {
 
     expect(onConfirmationHandler).toHaveBeenCalled();
   })
+
+  it('should be able to receive a handler for the "Cancel" button and execute it upon click', () => {
+    const onCancellationHandler = jest.fn();
+    const {getByRole} = render(<Confirmation onCancellation={onCancellationHandler} />);
+    const cancelButton = getByRole('button', {name: 'Cancel'});
+
+    fireEvent.click(cancelButton);
+
+    expect(onCancellationHandler).toHaveBeenCalled();
+  })
 })
